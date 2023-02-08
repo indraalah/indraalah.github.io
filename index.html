@@ -1,0 +1,102 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <!--css-->
+  <style>
+    body {
+      background-color: aqua;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h3 {
+      font-family: 'Permanent Marker', cursive;
+      color: rgb(170, 147, 177);
+    }
+    .book {
+      max-width: 500px;
+      height: 350px;
+      background-color: white;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+      padding: 50px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 443px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 2px solid lightgray;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: lightgray;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: gray;
+    }
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Enter your name:</h3>
+    <input type="text" id="girlfriendName" placeholder="Masukkan Nama Kamu">
+    <button onclick="generateLetter()">Generate Letter</button>
+    <br><br>
+    <div class="book">
+    <p id="letter"></p>
+  </div>
+  
+
+  <script>
+    function generateLetter() {
+      var name = document.getElementById("girlfriendName").value;
+      var letter = "Dear " + name + ",\n\n";
+      letter += "I just wanted to take a moment to tell you how much you mean to me. You bring so much joy and happiness into my life, and I am so grateful to have you by my side.\n\n";
+      letter += "I love the way you laugh, the way you smile, and the way you always know how to make me feel better. You are my best friend, and my soulmate. I can't imagine my life without you.\n\n";
+      letter += "Thank you for always being there for me, for supporting me, and for loving me unconditionally. I promise to always be here for you, to support you, and to love you with all my heart.\n\n";
+      letter += "I love you more and more each day, and I can't wait to spend the rest of my life making you happy.\n\n";
+      letter += "Yours always,\n[Indra Senli]";
+
+      typeText(letter);
+    }
+
+    function typeText(text) {
+      var i = 0;
+      var paragraph = document.getElementById("letter");
+      paragraph.style.display = "block";
+      paragraph.innerHTML = "";
+
+      var typing = setInterval(function() {
+if (i < text.length) {
+paragraph.innerHTML += text.charAt(i);
+i++;
+} else {
+clearInterval(typing);
+}
+}, 50);
+}
+</script>
+
+</body>
+</html>
